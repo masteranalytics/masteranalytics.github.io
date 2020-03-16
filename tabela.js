@@ -33,8 +33,6 @@ function geraTabela(){
     corpo.appendChild(linha);
     elExclusivos.sort();
 
-    console.log(elExclusivos);
-
     for(let elemento in elExclusivos){
         let linha = document.createElement("tr")    
         let celula1 = document.createElement("td");
