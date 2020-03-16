@@ -1,11 +1,8 @@
 function geraTabela(){
     let variavel = document.getElementById("variavel").value;
-    let elementos = document.getElementById("elementos").value.split(";").trim;
-    let elExclusivos = [...new Set(elementos)];
-    let ocorrencias = elementos.reduce(function(obj, item) {
-        obj[item] = (obj[item] || 0) + 1;
-        return obj;
-    }, {});
+    let elementos = [];
+    let elExclusivos = [];
+    let ocorrencias = {};
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
     let cabecalho = document.createElement("thead");
@@ -20,6 +17,18 @@ function geraTabela(){
     let facp = 0;
 
     div.innerHTML = "";
+
+    for(let elemento of document.getElementById("elementos").value.split(";")){
+        elementos.push(elemento.trim());
+    }
+
+    elExclusivos = [...new Set(elementos)];
+
+    ocorrencias = elementos.reduce(function(obj, item) {
+        obj[item] = (obj[item] || 0) + 1;
+        return obj;
+    }, {});
+
     celula1.appendChild(document.createTextNode(variavel));
     linha.appendChild(celula1);
     celula2.appendChild(document.createTextNode("Frequência simples"));
@@ -32,6 +41,7 @@ function geraTabela(){
     linha.appendChild(celula5);
     linha.setAttribute("align","center");
     corpo.appendChild(linha);
+    
     elExclusivos.sort();
 
     for(let elemento in elExclusivos){
