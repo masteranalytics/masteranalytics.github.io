@@ -1,6 +1,6 @@
 function geraTabela(){
     let variavel = document.getElementById("variavel").value;
-    let elementos = trim(document.getElementById("elementos").value.split(";"));
+    let elementos = document.getElementById("elementos").value.split(";").replace(" ","");
     let elExclusivos = [...new Set(elementos)];
     let ocorrencias = elementos.reduce(function(obj, item) {
         obj[item] = (obj[item] || 0) + 1;
