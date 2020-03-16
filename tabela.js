@@ -19,6 +19,7 @@ function geraTabela(){
     let fac = 0;
     let facp = 0;
 
+    div.innerHTML = "";
     celula1.appendChild(document.createTextNode(variavel));
     linha.appendChild(celula1);
     celula2.appendChild(document.createTextNode("Frequência simples"));
