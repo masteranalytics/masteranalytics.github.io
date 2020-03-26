@@ -1,0 +1,27 @@
+#cadastro {
+    color: white;
+    background-color: rgb(7, 7, 7);
+    text-align: center;
+    border-radius: 10%;
+    position: absolute;
+    padding: 100px;
+    margin: -200px 100px 0px 600px;
+    text-align: center;
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 50px;
+}
+
+body {
+    background-image: url(imagens/fundo.jpg);
+    background-color: rgb(138, 138, 66);
+}
+
+#botao {
+    position: absolute;
+    padding: 20px;
+    font-size: 20px;
+    margin-left: -60px;
+}
