@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MasterAnalytics</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <nav>
-            <p>Logo do site</p>
-            <a href="login.html"> Pagina de login</a>
+        <nav id="menu">
+            <ul>
+                <li><a href="login.html"> Pagina de login</a></li>
+            </ul>
+
+            <a href="imagem"> <img src="imagens/logo1.jpeg"></a>
         </nav>
     </header>
+    <p>
+        <h1>Entrada de dados</h1>
+        <h2>teste em algumas configurações temos que decidir o layout da pg</h2>
+    </p>
     <div id="diventrada">
         <label for="variavel">Nome da variável:</label>
         <input id="variavel" type="text"><br>
         <label for="elementos">Elementos:</label>
         <input id="elementos" type="text"><br>
-        <input type="button" value="Calcular" onclick="geraTabela()">
+        <input id="botao" type="button" value="Calcular" onclick="geraTabela()">
         <script src="tabela.js"></script>
     </div>
     <div id="divtabela">
