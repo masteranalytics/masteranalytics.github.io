@@ -1,4 +1,8 @@
  /*Formatação do menu*/
+ img#logo {
+     width: 200px;
+ }
+
  nav#menu {
      display: block;
  }
