@@ -1,0 +1,27 @@
+/* formatção das paginas de login, cadastro e recuperar senha*/
+body#fundo {
+    background: url(/masteranalytics.github.io/imagens/fundo.jpg);
+}
+
+div#card {
+    margin: 100px 0px 100px 250px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+div#card-header {
+    background: white;
+    text-align: center;
+    font-size: 30px;
+    color: black;
+
+}
+
+footer#rodape {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+
+}
