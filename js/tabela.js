@@ -1,4 +1,4 @@
-function geraTabela(){
+function geraTabela() {
     let variavel = document.getElementById("variavel").value;
     let elementos = [];
     let elExclusivos = [];
@@ -18,13 +18,13 @@ function geraTabela(){
 
     div.innerHTML = "";
 
-    for(let elemento of document.getElementById("elementos").value.split(";")){
+    for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
     }
 
     elExclusivos = [...new Set(elementos)];
 
-    ocorrencias = elementos.reduce(function(obj, item) {
+    ocorrencias = elementos.reduce(function (obj, item) {
         obj[item] = (obj[item] || 0) + 1;
         return obj;
     }, {});
@@ -39,13 +39,13 @@ function geraTabela(){
     linha.appendChild(celula4);
     celula5.appendChild(document.createTextNode("Frequência acumulada percentual"));
     linha.appendChild(celula5);
-    linha.setAttribute("align","center");
+    linha.setAttribute("align", "center");
     corpo.appendChild(linha);
-    
+
     elExclusivos.sort();
 
-    for(let elemento in elExclusivos){
-        let linha = document.createElement("tr")    
+    for (let elemento in elExclusivos) {
+        let linha = document.createElement("tr")
         let celula1 = document.createElement("td");
         let celula2 = document.createElement("td");
         let celula3 = document.createElement("td");
@@ -65,7 +65,7 @@ function geraTabela(){
         linha.appendChild(celula4);
         celula5.appendChild(document.createTextNode(facp + "%"));
         linha.appendChild(celula5);
-        linha.setAttribute("align","center");
+        linha.setAttribute("align", "center");
         corpo.appendChild(linha);
     }
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
