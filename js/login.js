@@ -5,6 +5,6 @@ function login(){
     if(usuario != "admin@admin" && senha != "1234"){
         alert("Usuário ou senha incorreto!");
     }else{
-        window.location.href= "html/index.html";
+        window.location.href= "/html/index.html";
     }
 }
