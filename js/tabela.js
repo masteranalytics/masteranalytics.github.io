@@ -84,9 +84,6 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
-    alert(soma)
-    alert(elementos.length)
-    alert(moda)
-    document.write("Média:" + soma / elementos.length);
-    document.write("Moda:" + moda);
+    alert("Média:" + (soma / elementos.length).toFixed(1));
+    alert("Moda:" + moda);
 }
