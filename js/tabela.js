@@ -23,7 +23,7 @@ function geraTabela() {
 
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
-        soma = soma + elemento;
+        soma = soma + Number(elemento);
     }
 
     elExclusivos = [...new Set(elementos)];
@@ -84,6 +84,9 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
+    alert(soma)
+    alert(elementos.length)
+    alert(moda)
     document.write("Média:" + soma / elementos.length);
     document.write("Moda:" + moda);
 }
