@@ -80,7 +80,7 @@ function geraTabela() {
         linha.setAttribute("align", "center");
         corpo.appendChild(linha);
         if(indexmediana <= fac){
-            mediana = elemento;
+            mediana = celula1.innerText;
         }
     }
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
