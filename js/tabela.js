@@ -15,17 +15,25 @@ function geraTabela() {
     let celula5 = document.createElement("td");
     let fac = 0;
     let facp = 0;
+    let soma = 0;
+    let qtdmoda = 0;
+    let moda = "";
 
     div.innerHTML = "";
 
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
+        soma = soma + elemento;
     }
 
     elExclusivos = [...new Set(elementos)];
 
     ocorrencias = elementos.reduce(function (obj, item) {
         obj[item] = (obj[item] || 0) + 1;
+        if(obj[item] > qtdmoda){
+            qtdmoda = obj[item];
+            moda = item;
+        }
         return obj;
     }, {});
 
@@ -54,7 +62,7 @@ function geraTabela() {
         let fsp = parseFloat((ocorrencias[elExclusivos[elemento]] / elementos.length) * 100).toFixed(0);
 
         fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
-        facp = parseInt(facp) + parseInt(fsp);
+        facp = (fac / elementos.length) * 100 ;
         celula1.appendChild(document.createTextNode(elExclusivos[elemento]));
         linha.appendChild(celula1);
         celula2.appendChild(document.createTextNode(ocorrencias[elExclusivos[elemento]]));
@@ -75,4 +83,7 @@ function geraTabela() {
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
+
+    document.write("Média:" + soma / elementos.length);
+    document.write("Moda:" + moda);
 }
