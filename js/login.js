@@ -5,6 +5,7 @@ function login(){
     if(usuario != "admin@admin" && senha != "1234"){
         alert("Usuário ou senha incorreto!");
     }else{
+        alert("entrou")
         window.location.replace("https://masteranalytics.github.io/html/index.html");
     }
 }
