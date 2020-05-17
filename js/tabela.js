@@ -18,6 +18,8 @@ function geraTabela() {
     let soma = 0;
     let qtdmoda = 0;
     let moda = "";
+    let indexmediana = 0;
+    let mediana = "";
 
     div.innerHTML = "";
 
@@ -25,6 +27,8 @@ function geraTabela() {
         elementos.push(elemento.trim());
         soma = soma + Number(elemento);
     }
+
+    indexmediana = soma / 2;
 
     elExclusivos = [...new Set(elementos)];
 
@@ -62,7 +66,7 @@ function geraTabela() {
         let fsp = parseFloat((ocorrencias[elExclusivos[elemento]] / elementos.length) * 100).toFixed(0);
 
         fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
-        facp = (fac / elementos.length) * 100 ;
+        facp = ((fac / elementos.length) * 100).toFixed(1) ;
         celula1.appendChild(document.createTextNode(elExclusivos[elemento]));
         linha.appendChild(celula1);
         celula2.appendChild(document.createTextNode(ocorrencias[elExclusivos[elemento]]));
@@ -75,6 +79,9 @@ function geraTabela() {
         linha.appendChild(celula5);
         linha.setAttribute("align", "center");
         corpo.appendChild(linha);
+        if(indexmediana <= fac){
+            mediana = elExclusivos[elemento];
+        }
     }
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
@@ -84,6 +91,7 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
-    alert("Média:" + (soma / elementos.length).toFixed(1));
-    alert("Moda:" + moda);
+    alert("Média: " + (soma / elementos.length).toFixed(1));
+    alert("Moda: " + moda);
+    alert("Mediana: " + mediana);
 }
