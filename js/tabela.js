@@ -81,8 +81,6 @@ function geraTabela() {
         corpo.appendChild(linha);
     }
 
-    elementos.sort();
-    mediana = elementos[indexmediana - 1]
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
@@ -91,6 +89,8 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
+    elementos.sort();
+    mediana = elementos[indexmediana - 1]
     alert(indexmediana);
     if(isNaN(soma)){
         alert("Média: Não existe");
