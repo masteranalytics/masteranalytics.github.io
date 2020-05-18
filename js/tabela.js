@@ -20,15 +20,15 @@ function geraTabela() {
     let moda = "";
     let indexmediana = 0;
     let mediana = "";
+    let media
 
     div.innerHTML = "";
 
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
-        soma = soma + Number(elemento);
     }
 
-    indexmediana = soma / 2;
+    indexmediana = elementos.length / 2;
 
     elExclusivos = [...new Set(elementos)];
 
@@ -79,10 +79,10 @@ function geraTabela() {
         linha.appendChild(celula5);
         linha.setAttribute("align", "center");
         corpo.appendChild(linha);
-        if(indexmediana <= fac){
-            mediana = celula1.innerText;
-        }
     }
+
+    elementos.sort();
+    mediana = elementos[indexmediana - 1]
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
@@ -91,7 +91,12 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
-    alert("Média: " + (soma / elementos.length).toFixed(1));
+    alert(indexmediana);
+    if(isNaN(soma)){
+        alert("Média: Não existe");
+    }else{
+        alert("Média: " + (soma / elementos.length).toFixed(1));
+    }
     alert("Moda: " + moda);
     alert("Mediana: " + mediana);
 }
