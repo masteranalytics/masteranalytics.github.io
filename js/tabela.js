@@ -20,12 +20,14 @@ function geraTabela() {
     let moda = "";
     let indexmediana = 0;
     let mediana = "";
-    let media
 
     div.innerHTML = "";
 
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
+        if(! isNaN(elemento)){
+            soma = soma + elemento
+        }
     }
 
     indexmediana = elementos.length / 2;
