@@ -5,7 +5,7 @@ function geraTabela() {
     let ocorrencias = {};
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
-    let cabecalho = document.createElement("thead");
+    let cabecalho = document.createElement("tr");
     let corpo = document.createElement("tbody");
     let linha = document.createElement("tr")
     let celula1 = document.createElement("td");
