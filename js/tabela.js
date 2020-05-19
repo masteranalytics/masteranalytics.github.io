@@ -26,7 +26,7 @@ function geraTabela() {
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
         if(! isNaN(elemento)){
-            soma = soma + elemento
+            soma = soma + Number(elemento)
         }
     }
 
