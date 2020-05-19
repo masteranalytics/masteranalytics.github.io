@@ -84,7 +84,7 @@ function geraTabela() {
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
-    cabecalho.setAttribute("align", "center");
+    cabecalho.setAttribute("align", "center", "colspan='5'");
     tabela.appendChild(cabecalho);
     tabela.appendChild(corpo);
     div.appendChild(tabela);
