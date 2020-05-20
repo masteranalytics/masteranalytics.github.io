@@ -69,7 +69,7 @@ function geraTabela() {
 
     elExclusivos.sort();
 
-    if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
+    //if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
         for (let elemento in elExclusivos) {
             let linha = document.createElement("tr")
             let celula1 = document.createElement("td");
@@ -94,14 +94,14 @@ function geraTabela() {
             linha.setAttribute("align", "center");
             corpo.appendChild(linha);
         }
-    }else{
+   // }else{
         let at = elExclusivos[0] - elExclusivos[elExclusivos.length - 1];
         alert(at);
         alert(elExclusivos[0]);
         alert(elExclusivos[elExclusivos.length - 1]);
         alert(elementos.length);
         console.log(elExclusivos);
-    }
+ //   }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
