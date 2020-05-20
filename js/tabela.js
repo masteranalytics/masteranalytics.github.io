@@ -105,7 +105,7 @@ function geraTabela() {
         let classes = 0;
         let inervalo = 0;
 
-        while(divisivel = false){
+        while(divisivel == false){
             at = at + 1;
             if(at % (k - 1) == 0){
                 classes = k -1;
