@@ -45,7 +45,7 @@ function geraTabela() {
     }, {});
 
     alert(elementos.length);
-    alert(elementos.length * 0.6);
+    alert(elementos.length * 0.3);
     alert(elExclusivos.length);
     
     if(isNaN(elementos[1])){
