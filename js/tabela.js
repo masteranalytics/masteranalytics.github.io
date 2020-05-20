@@ -20,7 +20,8 @@ function geraTabela() {
     let moda = "";
     let indexmediana = 0;
     let mediana = "";
-
+    let tipovariavel = "";
+ 
     div.innerHTML = "";
 
     for (let elemento of document.getElementById("elementos").value.split(";")) {
@@ -43,6 +44,16 @@ function geraTabela() {
         return obj;
     }, {});
 
+    if(isNaN(elementos[1])){
+        tipovariavel = "Qualitativa"
+    }else{
+        if((elementos.length * 0.6) > elExclusivos.length){
+            tipovariavel = "Quantitativa Continua"
+        }else{
+            tipovariavel = "Quantitativa Discreta"
+        }
+    }
+    
     celula1.appendChild(document.createTextNode(variavel));
     linha.appendChild(celula1);
     celula2.appendChild(document.createTextNode("Frequência simples"));
