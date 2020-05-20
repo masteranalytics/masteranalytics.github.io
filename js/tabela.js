@@ -44,6 +44,10 @@ function geraTabela() {
         return obj;
     }, {});
 
+    alert(elementos.length);
+    alert(elementos.length * 0.6);
+    alert(elExclusivos.length);
+    
     if(isNaN(elementos[1])){
         tipovariavel = "Qualitativa"
     }else{
