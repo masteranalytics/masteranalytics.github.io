@@ -51,7 +51,7 @@ function geraTabela() {
     if(isNaN(elementos[1])){
         tipovariavel = "Qualitativa"
     }else{
-        if((elementos.length * 0.6) > elExclusivos.length){
+        if((elementos.length * 0.3) > elExclusivos.length){
             tipovariavel = "Quantitativa Continua"
         }else{
             tipovariavel = "Quantitativa Discreta"
