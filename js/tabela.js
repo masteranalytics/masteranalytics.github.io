@@ -100,6 +100,7 @@ function geraTabela() {
         alert(elExclusivos[0]);
         alert(elExclusivos[elExclusivos.length - 1]);
         alert(elementos.length);
+        console.log(elExclusivos);
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
