@@ -24,6 +24,10 @@ function geraTabela() {
  
     div.innerHTML = "";
 
+    function sortFunction(a, b){
+        return (a - b);
+    }
+
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
         if(! isNaN(elemento)){
@@ -67,7 +71,7 @@ function geraTabela() {
     linha.setAttribute("align", "center");
     corpo.appendChild(linha);
 
-    elExclusivos.sort();
+    elExclusivos.sort(sortFunction);
 
     if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
         for (let elemento in elExclusivos) {
