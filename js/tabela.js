@@ -43,10 +43,6 @@ function geraTabela() {
         }
         return obj;
     }, {});
-
-    alert(elementos.length);
-    alert(elementos.length * 0.3);
-    alert(elExclusivos.length);
     
     if(isNaN(elementos[1])){
         tipovariavel = "Qualitativa"
@@ -73,29 +69,37 @@ function geraTabela() {
 
     elExclusivos.sort();
 
-    for (let elemento in elExclusivos) {
-        let linha = document.createElement("tr")
-        let celula1 = document.createElement("td");
-        let celula2 = document.createElement("td");
-        let celula3 = document.createElement("td");
-        let celula4 = document.createElement("td");
-        let celula5 = document.createElement("td");
-        let fsp = parseFloat((ocorrencias[elExclusivos[elemento]] / elementos.length) * 100).toFixed(0);
+    if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
+        for (let elemento in elExclusivos) {
+            let linha = document.createElement("tr")
+            let celula1 = document.createElement("td");
+            let celula2 = document.createElement("td");
+            let celula3 = document.createElement("td");
+            let celula4 = document.createElement("td");
+            let celula5 = document.createElement("td");
+            let fsp = parseFloat((ocorrencias[elExclusivos[elemento]] / elementos.length) * 100).toFixed(0);
 
-        fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
-        facp = ((fac / elementos.length) * 100).toFixed(1) ;
-        celula1.appendChild(document.createTextNode(elExclusivos[elemento]));
-        linha.appendChild(celula1);
-        celula2.appendChild(document.createTextNode(ocorrencias[elExclusivos[elemento]]));
-        linha.appendChild(celula2);
-        celula3.appendChild(document.createTextNode(fsp + "%"));
-        linha.appendChild(celula3);
-        celula4.appendChild(document.createTextNode(fac));
-        linha.appendChild(celula4);
-        celula5.appendChild(document.createTextNode(facp + "%"));
-        linha.appendChild(celula5);
-        linha.setAttribute("align", "center");
-        corpo.appendChild(linha);
+            fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
+            facp = ((fac / elementos.length) * 100).toFixed(1) ;
+            celula1.appendChild(document.createTextNode(elExclusivos[elemento]));
+            linha.appendChild(celula1);
+            celula2.appendChild(document.createTextNode(ocorrencias[elExclusivos[elemento]]));
+            linha.appendChild(celula2);
+            celula3.appendChild(document.createTextNode(fsp + "%"));
+            linha.appendChild(celula3);
+            celula4.appendChild(document.createTextNode(fac));
+            linha.appendChild(celula4);
+            celula5.appendChild(document.createTextNode(facp + "%"));
+            linha.appendChild(celula5);
+            linha.setAttribute("align", "center");
+            corpo.appendChild(linha);
+        }
+    }else{
+        let at = elExclusivos[0] - elExclusivos[elExclusivos.length - 1];
+        alert(at);
+        alert(elExclusivos[0]);
+        alert(elExclusivos[elExclusivos.length - 1]);
+        alert(elementos.length);
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
@@ -108,7 +112,6 @@ function geraTabela() {
 
     elementos.sort();
     mediana = elementos[indexmediana - 1]
-    alert(tipovariavel);
     if(isNaN(soma)){
         alert("Média: Não existe");
     }else{
