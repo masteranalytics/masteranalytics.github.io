@@ -99,12 +99,28 @@ function geraTabela() {
             corpo.appendChild(linha);
         }
     }else{
-        let at = elExclusivos[0] - elExclusivos[elExclusivos.length - 1];
-        alert(at);
-        alert(elExclusivos[0]);
-        alert(elExclusivos[elExclusivos.length - 1]);
-        alert(elementos.length);
-        console.log(elExclusivos);
+        let at = elExclusivos[elExclusivos.length - 1] - elExclusivos[0];
+        let k = Math.sqrt(elementos.length).toFixed(0);
+        let divisivel = false;
+        let classes = 0;
+        let inervalo = 0;
+
+        while(divisivel = false){
+            at = at + 1;
+            if(at % (k - 1) == 0){
+                classes = k -1;
+                divisivel = true;
+            }else if(at % k == 0){
+                classes = k;
+                divisivel = true;
+            }else if(at % (k + 1) == 0){
+                classes = k + 1;
+                divisivel = true;
+            }
+        }
+        console.log(at)
+        console.log(k)
+        console.log(classes)
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
