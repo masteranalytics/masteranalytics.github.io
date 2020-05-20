@@ -104,7 +104,7 @@ function geraTabela() {
 
     elementos.sort();
     mediana = elementos[indexmediana - 1]
-    alert(soma);
+    alert(tipovariavel);
     if(isNaN(soma)){
         alert("Média: Não existe");
     }else{
