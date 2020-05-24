@@ -108,8 +108,6 @@ function geraTabela() {
         let elInicial = 0;
         let elFinal = 0;
 
-        at = 78
-        
         while(divisivel == false){
             at = at + 1;
             if(at % (k - 1) == 0){
