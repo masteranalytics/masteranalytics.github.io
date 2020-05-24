@@ -71,8 +71,10 @@ function geraTabela() {
     linha.setAttribute("align", "center");
     corpo.appendChild(linha);
 
+    console.log(elExclusivos);
     elExclusivos.sort(sortFunction);
-
+    console.log(elExclusivos);
+    
     if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
         for (let elemento in elExclusivos) {
             let linha = document.createElement("tr")
@@ -129,7 +131,7 @@ function geraTabela() {
 
     console.log("classes:" + classes);
     console.log("intervalo:" + intervalo);
-    
+
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
