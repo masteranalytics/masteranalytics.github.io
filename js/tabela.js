@@ -149,7 +149,7 @@ function geraTabela() {
             console.log(i);
 
             for(let elemento in elExclusivos){
-                console.log(elemento);
+                console.log(elExclusivos[elemento]);
                 if(elemento >= elInicial && elemento < elFinal){
                     console.log(true);
                     qtdElementos = qtdElementos + 1;
