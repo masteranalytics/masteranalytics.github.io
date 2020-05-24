@@ -103,8 +103,10 @@ function geraTabela() {
         let k = Math.sqrt(elementos.length).toFixed(0);
         let divisivel = false;
         let classes = 0;
-        let inervalo = 0;
+        let intervalo = 0;
 
+        at = 77
+        
         while(divisivel = false){
             at = at + 1;
             if(at % (k - 1) == 0){
@@ -118,9 +120,9 @@ function geraTabela() {
                 divisivel = true;
             }
         }
-        console.log(at)
-        console.log(k)
-        console.log(classes)
+
+        intervalo = at / classes;
+
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
