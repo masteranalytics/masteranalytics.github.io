@@ -123,7 +123,7 @@ function geraTabela() {
         }
 
         intervalo = at / classes;
-        elInicial = elementos[0] - 1;
+        elInicial = elementos[0];
 
         for(let i = 1; i <= classes; i++){
             elFinal = elInicial + intervalo;
