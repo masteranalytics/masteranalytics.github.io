@@ -137,7 +137,7 @@ function geraTabela() {
         elInicial = elExclusivos[0] - 1;
         elFinal = elInicial + intervalo;
 
-        for(let i = 1; i == classes; i++){
+        for(let i = 1; i <= classes; i++){
             let qtdElementos = 0;
             let linha = document.createElement("tr")
             let celula1 = document.createElement("td");
