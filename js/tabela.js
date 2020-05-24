@@ -146,6 +146,7 @@ function geraTabela() {
             let celula4 = document.createElement("td");
             let celula5 = document.createElement("td");
             
+            console.log(i);
 
             for(let elemento in elExclusivos){
                 if(elemento >= elInicial && elemento < elFinal){
@@ -157,7 +158,7 @@ function geraTabela() {
             
             fac = parseInt(fac) + parseInt(qtdElementos);
             facp = ((fac / elExclusivos.length) * 100).toFixed(1) ;
-            celula1.appendChild(document.createTextNode(elInicial + "|----" + elFinal));
+            celula1.appendChild(document.createTextNode(elInicial + " |---- " + elFinal));
             linha.appendChild(celula1);
             celula2.appendChild(document.createTextNode(qtdElementos));
             linha.appendChild(celula2);
