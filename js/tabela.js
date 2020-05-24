@@ -106,6 +106,8 @@ function geraTabela() {
         let divisivel = false;
         let classes = 0;
         let intervalo = 0;
+        let elInicial = 0;
+        let elFinal = 0;
 
         console.log("at:" + at);
 
@@ -126,11 +128,48 @@ function geraTabela() {
         }
 
         console.log("at:" + at);
-        
+
         intervalo = at / classes;
 
         console.log("classes:" + classes);
         console.log("intervalo:" + intervalo);
+
+        elInicial = elExclusivos[0] - 1;
+        elFinal = elInicial + intervalo;
+
+        for(let i = 1; i == classes; i++){
+            let qtdElementos = 0;
+            let linha = document.createElement("tr")
+            let celula1 = document.createElement("td");
+            let celula2 = document.createElement("td");
+            let celula3 = document.createElement("td");
+            let celula4 = document.createElement("td");
+            let celula5 = document.createElement("td");
+            
+
+            for(let elemento in elExclusivos){
+                if(elemento >= elInicial && elemento < elFinal){
+                    qtdElementos = qtdElementos + 1;
+                }
+            }
+            
+            let fsp = parseFloat((qtdElementos / elExclusivos.length) * 100).toFixed(0);
+            
+            fac = parseInt(fac) + parseInt(qtdElementos);
+            facp = ((fac / elExclusivos.length) * 100).toFixed(1) ;
+            celula1.appendChild(document.createTextNode(elInicial + "|----" + elFinal));
+            linha.appendChild(celula1);
+            celula2.appendChild(document.createTextNode(qtdElementos));
+            linha.appendChild(celula2);
+            celula3.appendChild(document.createTextNode(fsp + "%"));
+            linha.appendChild(celula3);
+            celula4.appendChild(document.createTextNode(fac));
+            linha.appendChild(celula4);
+            celula5.appendChild(document.createTextNode(facp + "%"));
+            linha.appendChild(celula5);
+            linha.setAttribute("align", "center");
+            corpo.appendChild(linha);
+        }
 
     }
 
