@@ -109,8 +109,6 @@ function geraTabela() {
         let elInicial = 0;
         let elFinal = 0;
 
-        console.log("at:" + at);
-
         at = 78
         
         while(divisivel == false){
@@ -127,13 +125,7 @@ function geraTabela() {
             }
         }
 
-        console.log("at:" + at);
-
         intervalo = at / classes;
-
-        console.log("classes:" + classes);
-        console.log("intervalo:" + intervalo);
-
         elInicial = elExclusivos[0] - 1;
 
         for(let i = 1; i <= classes; i++){
@@ -144,14 +136,10 @@ function geraTabela() {
             let celula2 = document.createElement("td");
             let celula3 = document.createElement("td");
             let celula4 = document.createElement("td");
-            let celula5 = document.createElement("td");
-            
-            console.log(i);
+            let celula5 = document.createElement("td");;
 
             for(let elemento in elExclusivos){
-                console.log(elExclusivos[elemento]);
-                if(elemento >= elInicial && elemento < elFinal){
-                    console.log(true);
+                if(elExclusivos[elemento] >= elInicial && elExclusivos[elemento] < elFinal){
                     qtdElementos = qtdElementos + 1;
                 }
             }
