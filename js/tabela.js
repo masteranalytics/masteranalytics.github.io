@@ -127,10 +127,10 @@ function geraTabela() {
 
         intervalo = at / classes;
 
-    }
+        console.log("classes:" + classes);
+        console.log("intervalo:" + intervalo);
 
-    console.log("classes:" + classes);
-    console.log("intervalo:" + intervalo);
+    }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
