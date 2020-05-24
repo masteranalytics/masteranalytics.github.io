@@ -71,9 +71,7 @@ function geraTabela() {
     linha.setAttribute("align", "center");
     corpo.appendChild(linha);
 
-    console.log(elExclusivos);
     elExclusivos.sort(sortFunction);
-    console.log(elExclusivos);
     
     if(tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa"){
         for (let elemento in elExclusivos) {
@@ -101,7 +99,8 @@ function geraTabela() {
             corpo.appendChild(linha);
         }
     }else{
-        let at = elExclusivos[elExclusivos.length - 1] - elExclusivos[0];
+        elementos.sort(sortFunction);
+        let at = elementos[elementos.length - 1] - elementos[0];
         let k = Math.sqrt(elementos.length).toFixed(0);
         let divisivel = false;
         let classes = 0;
@@ -126,7 +125,7 @@ function geraTabela() {
         }
 
         intervalo = at / classes;
-        elInicial = elExclusivos[0] - 1;
+        elInicial = elementos[0] - 1;
 
         for(let i = 1; i <= classes; i++){
             elFinal = elInicial + intervalo;
@@ -138,16 +137,16 @@ function geraTabela() {
             let celula4 = document.createElement("td");
             let celula5 = document.createElement("td");;
 
-            for(let elemento in elExclusivos){
-                if(elExclusivos[elemento] >= elInicial && elExclusivos[elemento] < elFinal){
+            for(let elemento in elementos){
+                if(elementos[elemento] >= elInicial && elementos[elemento] < elFinal){
                     qtdElementos = qtdElementos + 1;
                 }
             }
             
-            let fsp = parseFloat((qtdElementos / elExclusivos.length) * 100).toFixed(0);
+            let fsp = parseFloat((qtdElementos / elementos.length) * 100).toFixed(0);
             
             fac = parseInt(fac) + parseInt(qtdElementos);
-            facp = ((fac / elExclusivos.length) * 100).toFixed(1) ;
+            facp = ((fac / elementos.length) * 100).toFixed(1) ;
             celula1.appendChild(document.createTextNode(elInicial + " |---- " + elFinal));
             linha.appendChild(celula1);
             celula2.appendChild(document.createTextNode(qtdElementos));
