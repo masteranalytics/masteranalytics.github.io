@@ -105,6 +105,8 @@ function geraTabela() {
         let classes = 0;
         let intervalo = 0;
 
+        console.log("at:" + at);
+
         at = 77
         
         while(divisivel == false){
@@ -125,6 +127,9 @@ function geraTabela() {
 
     }
 
+    console.log("classes:" + classes);
+    console.log("intervalo:" + intervalo);
+    
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
