@@ -171,14 +171,6 @@ function geraTabela() {
     tabela.setAttribute("align", "center");
     mediana = elementos[indexmediana - 1]
 
-    let div = getElementById("divmtc");
-    let tabela = document.createElement("table");
-    let corpo = document.createElement("tbody");
-    let linha = document.createElement("tr")
-    let celula1 = document.createElement("td");
-    let celula2 = document.createElement("td");
-    let celula3 = document.createElement("td");
-
     celula1.appendChild(document.createTextNode("Média:"));
     linha.appendChild(celula1);
     celula2.appendChild(document.createTextNode("Moda:"));
