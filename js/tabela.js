@@ -135,9 +135,9 @@ function geraTabela() {
         console.log("intervalo:" + intervalo);
 
         elInicial = elExclusivos[0] - 1;
-        elFinal = elInicial + intervalo;
 
         for(let i = 1; i <= classes; i++){
+            elFinal = elInicial + intervalo;
             let qtdElementos = 0;
             let linha = document.createElement("tr")
             let celula1 = document.createElement("td");
@@ -149,7 +149,9 @@ function geraTabela() {
             console.log(i);
 
             for(let elemento in elExclusivos){
+                console.log(elemento);
                 if(elemento >= elInicial && elemento < elFinal){
+                    console.log(true);
                     qtdElementos = qtdElementos + 1;
                 }
             }
@@ -170,6 +172,7 @@ function geraTabela() {
             linha.appendChild(celula5);
             linha.setAttribute("align", "center");
             corpo.appendChild(linha);
+            elInicial = elFinal;
         }
 
     }
