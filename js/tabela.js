@@ -203,4 +203,8 @@ function geraTabela() {
     linha.appendChild(celula2);
     celula3.appendChild(document.createTextNode("Mediana: " + mediana));
     linha.appendChild(celula3);
+    tabela.appendChild(corpo);
+    div.appendChild(tabela);
+    tabela.setAttribute("border", "2");
+    tabela.setAttribute("align", "center");
 }
