@@ -5,7 +5,7 @@ function geraTabela() {
     let ocorrencias = {};
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
-    let cabecalho = document.createElement("tr");
+    let cabecalho = document.createElement("thead");
     let corpo = document.createElement("tbody");
     let linha = document.createElement("tr")
     let celula1 = document.createElement("td");
@@ -163,20 +163,44 @@ function geraTabela() {
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
-    cabecalho.setAttribute("align", "center", "colspan=5");
+    cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
     tabela.appendChild(corpo);
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
-
-    elementos.sort();
     mediana = elementos[indexmediana - 1]
+
+    div = getElementById("divmtc");
+    tabela = document.createElement("table");
+    corpo = document.createElement("tbody");
+    linha = document.createElement("tr")
+    celula1 = document.createElement("td");
+    celula2 = document.createElement("td");
+    celula3 = document.createElement("td");
+
+    celula1.appendChild(document.createTextNode("Média:"));
+    linha.appendChild(celula1);
+    celula2.appendChild(document.createTextNode("Moda:"));
+    linha.appendChild(celula2);
+    celula3.appendChild(document.createTextNode("Mediana:"));
+    linha.appendChild(celula3);
+    corpo.appendChild(linha);
+    
+    linha = document.createElement("tr")
+    celula1 = document.createElement("td");
+    celula2 = document.createElement("td");
+    celula3 = document.createElement("td");
+
     if(variavel == "Qualitativa"){
-        alert("Média: Não existe");
+        celula1.appendChild(document.createTextNode("Média: Não existe"));
+        linha.appendChild(celula1);
     }else{
-        alert("Média: " + (soma / elementos.length).toFixed(1));
+        celula1.appendChild(document.createTextNode("Média: " + (soma / elementos.length).toFixed(1)));
+        linha.appendChild(celula1);
     }
-    alert("Moda: " + moda);
-    alert("Mediana: " + mediana);
+    celula2.appendChild(document.createTextNode("Moda: " + moda));
+    linha.appendChild(celula2);
+    celula3.appendChild(document.createTextNode("Mediana: " + mediana));
+    linha.appendChild(celula3);
 }
