@@ -109,7 +109,7 @@ function geraTabela() {
 
         console.log("at:" + at);
 
-        at = 77
+        at = 78
         
         while(divisivel == false){
             at = at + 1;
@@ -125,6 +125,8 @@ function geraTabela() {
             }
         }
 
+        console.log("at:" + at);
+        
         intervalo = at / classes;
 
         console.log("classes:" + classes);
