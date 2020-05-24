@@ -107,7 +107,7 @@ function geraTabela() {
 
         at = 77
         
-        while(divisivel = false){
+        while(divisivel == false){
             at = at + 1;
             if(at % (k - 1) == 0){
                 classes = k -1;
