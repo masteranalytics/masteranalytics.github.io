@@ -200,13 +200,21 @@ function geraTabela() {
     tabela.setAttribute("align", "center");
 
     console.log(ocorrencias);
+    
+    let qtd = [];
+    
+    for(let elemento in elExclusivos){
+        qtd.push(ocorrencias[elemento]);
+    }
 
+    console.log(qtd);
+    
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: elExclusivos,
             datasets: [{
-                data: [2,3,5],
+                data: qtd,
             }]
         }
     });
