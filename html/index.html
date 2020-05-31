@@ -62,7 +62,7 @@
                 <input id="elementos" type="text"><br>
             </div>
             <button class="btn btn-primary active" data-toggle="button" id="botao" type="button"
-                onclick="geraTabela()">Calcular</button>
+                onclick="geraTabela(),geraGrafico()">Calcular</button>
         </form>
     </div>
     <br><br>
@@ -85,22 +85,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="/js/tabela.js"></script>
     <script>
-        if(variavel == "Qualitativa"){
-        let rotulos = elExclusivos.toString();
-        let chartGraph = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: rotulos,
-                datasets: [{
-                    label: "Teste 1",
-                    data: [5, 10, 5, 14, 20, 15, 6, 14, 8, 12, 15, 5, 10],
-                    borderWidth: 6,
-                    borderColor: 'rgba(77,166,253,0.85)',
-                    backgroundColor: 'transparent',
-                }]
-            }
-        });
-    }
+        function geraGrafico() {
+            let rotulos = elExclusivos.toString();
+            let chartGraph = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: rotulos,
+                    datasets: [{
+                        label: "Teste 1",
+                        data: [5, 10, 5, 14, 20, 15, 6, 14, 8, 12, 15, 5, 10],
+                        borderWidth: 6,
+                        borderColor: 'rgba(77,166,253,0.85)',
+                        backgroundColor: 'transparent',
+                    }]
+                }
+            });
+        }
     </script>
 </body>
 
