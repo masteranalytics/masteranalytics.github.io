@@ -2,6 +2,8 @@ function geraTabela() {
     let variavel = document.getElementById("variavel").value;
     let elementos = [];
     let elExclusivos = [];
+    let qtd = [];
+    let cor = [];
     let ocorrencias = {};
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
@@ -198,16 +200,7 @@ function geraTabela() {
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
-
-    console.log(ocorrencias);
-    
-    let qtd = [];
-    let cor = [];
-    for(let elemento in elExclusivos){
-        qtd.push(ocorrencias[elExclusivos[elemento]]);
-        cor.push(corAleatoria());
-    }
-
+        
     function corAleatoria() {
         var r = Math.floor(Math.random() * 255);
         var g = Math.floor(Math.random() * 255);
@@ -215,19 +208,43 @@ function geraTabela() {
         return "rgb(" + r + "," + g + "," + b + ")";
      };
 
-    console.log(qtd);
-
-    let chartGraph = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: elExclusivos,
-            datasets: [{
-                label: variavel,
-                data: qtd,
-                backgroundColor: cor,
-                borderColor: 'rgba(200, 200, 200, 0.75)',
-                hoverBorderColor: 'rgba(200, 200, 200, 1)',
-            }]
+    if(tipovariavel == "Qualitativa"){
+        for(let elemento in elExclusivos){
+            qtd.push(ocorrencias[elExclusivos[elemento]]);
+            cor.push(corAleatoria());
         }
-    });
+
+        let chartGraph = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: elExclusivos,
+                datasets: [{
+                    label: variavel,
+                    data: qtd,
+                    backgroundColor: cor,
+                    borderColor: 'rgba(200, 200, 200, 0.75)',
+                    hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                }]
+            }
+        });
+    }else if(tipovariavel == "Quantitativa Discreta"){
+        for(let elemento in elExclusivos){
+            qtd.push(ocorrencias[elExclusivos[elemento]]);
+            cor.push(corAleatoria());
+        }
+
+        let chartGraph = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: elExclusivos,
+                datasets: [{
+                    label: variavel,
+                    data: qtd,
+                    backgroundColor: cor,
+                    borderColor: 'rgba(200, 200, 200, 0.75)',
+                    hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                }]
+            }
+        });
+    }
 }
