@@ -199,6 +199,8 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
+    console.log(ocorrencias);
+
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
