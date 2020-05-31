@@ -170,6 +170,8 @@ function geraTabela() {
         elContinua.push(elFinal);
     }
 
+    console.log(elContinua);
+
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
