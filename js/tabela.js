@@ -171,14 +171,14 @@ function geraTabela() {
     tabela.setAttribute("align", "center");
     mediana = elementos[indexmediana - 1]
 
-    div = document.getElementById("divtabela");
+    div = document.getElementById("divmtc");
     tabela = document.createElement("table");
     corpo = document.createElement("tbody");
     linha = document.createElement("tr");
     celula1 = document.createElement("td");
     celula2 = document.createElement("td");
     celula3 = document.createElement("td");
-    
+
     if(variavel == "Qualitativa"){
         celula1.appendChild(document.createTextNode("Média: Não existe"));
         linha.appendChild(celula1);
@@ -190,6 +190,7 @@ function geraTabela() {
     linha.appendChild(celula2);
     celula3.appendChild(document.createTextNode("Mediana: " + mediana));
     linha.appendChild(celula3);
+    corpo.appendChild(linha);
     tabela.appendChild(corpo);
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
