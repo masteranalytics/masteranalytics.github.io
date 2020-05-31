@@ -171,7 +171,7 @@ function geraTabela() {
     tabela.setAttribute("align", "center");
     mediana = elementos[indexmediana - 1]
 
-    div = document.getElementById("divmtc");
+    div = document.getElementById("divtabela");
     tabela = document.createElement("table");
     corpo = document.createElement("tbody");
     linha = document.createElement("tr");
