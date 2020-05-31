@@ -200,9 +200,9 @@ function geraTabela() {
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: elExclusivos,
+            labels: ["verde","azul","amarelo","vermelho","branco"],
             datasets: [{
-                data: ocorrencias,
+                data: [3,1,2,1,1],
                 borderWidth: 6,
                 borderColor: 'rgba(77,166,253,0.85)',
                 backgroundColor: 'transparent',
