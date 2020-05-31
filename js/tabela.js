@@ -2,6 +2,8 @@ function geraTabela() {
     let variavel = document.getElementById("variavel").value;
     let elementos = [];
     let elExclusivos = [];
+    let elContinua = [];
+    let qtdContinua = [];
     let qtd = [];
     let cor = [];
     let ocorrencias = {};
@@ -160,6 +162,8 @@ function geraTabela() {
             linha.appendChild(celula5);
             linha.setAttribute("align", "center");
             corpo.appendChild(linha);
+            elContinua.push(elInicial);
+            qtdContinua.puhs(quantidade);
             elInicial = elFinal;
         }
 
@@ -256,18 +260,17 @@ function geraTabela() {
             }
         });
     } else {
-        for (let elemento in elExclusivos) {
-            qtd.push(ocorrencias[elExclusivos[elemento]]);
+        for (i = 0; i > elContinua.length - 1; i++) {
             cor.push(corAleatoria());
         }
 
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: elExclusivos,
+                labels: elContinua,
                 datasets: [{
                     label: variavel,
-                    data: qtd,
+                    data: qtdContinua,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
