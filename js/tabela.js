@@ -197,15 +197,22 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
+    let labels = "";
+    let qnt = "";
+
+    elExclusivos.forEach(element => {
+        labels = labels + element + ",";
+    });
+
+    ocorrencias.forEach(element =>{
+        qnt = qnt + element + ",";
+    });
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["verde","azul","amarelo","vermelho","branco"],
+            labels: labels,
             datasets: [{
-                data: [3,1,2,1,1],
-                borderWidth: 6,
-                borderColor: 'rgba(77,166,253,0.85)',
-                backgroundColor: 'transparent',
+                data: qnt,
             }]
         }
     });
