@@ -202,7 +202,7 @@ function geraTabela() {
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: labels,
+            labels: elExclusivos,
             datasets: [{
                 data: [2,3,5],
             }]
