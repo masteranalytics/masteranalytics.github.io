@@ -21,7 +21,7 @@ function geraTabela() {
     let indexmediana = 0;
     let mediana = "";
     let tipovariavel = "";
- 
+    let ctx = document.getElementsByClassName("grafico");
     div.innerHTML = "";
 
     function sortFunction(a, b){
@@ -195,4 +195,16 @@ function geraTabela() {
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
+
+    if(variavel == "Qualitativa"){
+        let rotulos = elExclusivos.toString();
+        let chartGraph = new Chart(ctx, {
+            type: 'doughnut',
+            data: (
+                labels: rotulos,
+                data: ocorrencias,
+            )
+        })
+    }
+
 }
