@@ -164,7 +164,7 @@ function geraTabela() {
             linha.setAttribute("align", "center");
             corpo.appendChild(linha);
             elContinua.push(elInicial);
-            qtdContinua.puhs(quantidade);
+            qtdContinua.puhs(qtdElementos);
             elInicial = elFinal;
         }
 
