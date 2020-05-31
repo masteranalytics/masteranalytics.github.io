@@ -224,7 +224,6 @@ function geraTabela() {
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                    yAxisID: 0,
                 }]
             }
         });
@@ -244,6 +243,7 @@ function geraTabela() {
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                    yAxisID: 0,
                 }]
             }
         });
