@@ -182,7 +182,7 @@ function geraTabela() {
 
     div.innerHTML = "";
 
-    if(variavel == "Qualitativa"){
+    if(tipovariavel == "Qualitativa"){
         celula1.appendChild(document.createTextNode("Média: Não existe"));
         linha.appendChild(celula1);
     }else{
@@ -202,10 +202,18 @@ function geraTabela() {
     console.log(ocorrencias);
     
     let qtd = [];
-    
+    let cor = [];
     for(let elemento in elExclusivos){
         qtd.push(ocorrencias[elExclusivos[elemento]]);
+        cor.push(corAleatoria());
     }
+
+    let corAleatoria = function() {
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        return "rgb(" + r + "," + g + "," + b + ")";
+     };
 
     console.log(qtd);
 
@@ -214,7 +222,11 @@ function geraTabela() {
         data: {
             labels: elExclusivos,
             datasets: [{
+                label: variavel,
                 data: qtd,
+                backgroundColor: cor,
+                borderColor: 'rgba(200, 200, 200, 0.75)',
+                hoverBorderColor: 'rgba(200, 200, 200, 1)',
             }]
         }
     });
