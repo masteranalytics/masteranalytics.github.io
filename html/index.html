@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="/Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/estilo.css">
     <title>Master Analytics</title>
-    <script src="/Bootstrap/js/jquery.min.js"></script>
-    <script src="/Bootstrap/js/popper.min.js"></script>
-    <script src="/Bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="/js/tabela.js"></script>
+
 </head>
 
 <body>
@@ -82,6 +78,30 @@
     <footer id="rodape">
         <p>Master Analystics&reg; 2020 </p>
     </footer>
+
+    <script src="/Bootstrap/js/jquery.min.js"></script>
+    <script src="/Bootstrap/js/popper.min.js"></script>
+    <script src="/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="/js/tabela.js"></script>
+    <script>
+        if(variavel == "Qualitativa"){
+        let rotulos = elExclusivos.toString();
+        let chartGraph = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: rotulos,
+                datasets: [{
+                    label: "Teste 1",
+                    data: [5, 10, 5, 14, 20, 15, 6, 14, 8, 12, 15, 5, 10],
+                    borderWidth: 6,
+                    borderColor: 'rgba(77,166,253,0.85)',
+                    backgroundColor: 'transparent',
+                }]
+            }
+        });
+    }
+    </script>
 </body>
 
 </html>
