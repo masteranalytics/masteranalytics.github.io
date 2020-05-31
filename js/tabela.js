@@ -167,7 +167,7 @@ function geraTabela() {
             qtdContinua.push(qtdElementos);
             elInicial = elFinal;
         }
-        qtdContinua.push(elFinal);
+        elContinua.push(elFinal);
     }
 
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
