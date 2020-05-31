@@ -204,7 +204,7 @@ function geraTabela() {
     let qtd = [];
     
     for(let elemento in elExclusivos){
-        qtd.push(ocorrencias[elExclsivos[elemento]]);
+        qtd.push(ocorrencias[elExclusivos[elemento]]);
     }
 
     console.log(qtd);
