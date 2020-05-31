@@ -28,6 +28,7 @@ function geraTabela() {
     let ctx = document.getElementsByClassName("grafico");
 
     div.innerHTML = "";
+    ctx.innerHTML = "";
 
     function sortFunction(a, b) {
         return (a - b);
