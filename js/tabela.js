@@ -180,6 +180,8 @@ function geraTabela() {
     celula2 = document.createElement("td");
     celula3 = document.createElement("td");
 
+    div.innerHTML = "";
+
     if(variavel == "Qualitativa"){
         celula1.appendChild(document.createTextNode("Média: Não existe"));
         linha.appendChild(celula1);
@@ -197,22 +199,12 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
-    let labels = "";
-    let qnt = "";
-
-    elExclusivos.forEach(element => {
-        labels = labels + element + ",";
-    });
-
-    ocorrencias.forEach(element =>{
-        qnt = qnt + element + ",";
-    });
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels,
             datasets: [{
-                data: qnt,
+                data: [2,3,5],
             }]
         }
     });
