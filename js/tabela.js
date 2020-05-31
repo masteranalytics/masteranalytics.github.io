@@ -21,7 +21,7 @@ function geraTabela() {
     let indexmediana = 0;
     let mediana = "";
     let tipovariavel = "";
-    let ctx = document.getElementsByClassName("grafico");
+    
 
     div.innerHTML = "";
 
@@ -197,21 +197,12 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
+    /*
     if(variavel == "Qualitativa"){
         let rotulos = elExclusivos.toString();
-        let chartGraph = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Set","Out","Nov","Dez"],
-                datasets: [{
-                    label: "Teste 1",
-                    data: [5,10,5,14,20,15,6,14,8,12,15,5,10],
-                    borderWidth: 6,
-                    borderColor: 'rgba(77,166,253,0.85)',
-                    backgroundColor: 'transparent',
-                }]
-            }
+
         })
     }
+    */
 
 }
