@@ -22,6 +22,7 @@ function geraTabela() {
     let mediana = "";
     let tipovariavel = "";
     let ctx = document.getElementsByClassName("grafico");
+
     div.innerHTML = "";
 
     function sortFunction(a, b){
@@ -200,10 +201,12 @@ function geraTabela() {
         let rotulos = elExclusivos.toString();
         let chartGraph = new Chart(ctx, {
             type: 'doughnut',
-            data: (
+            data: {
                 labels: rotulos,
-                data: ocorrencias,
-            )
+                datasets: [{
+                    data: ocorrencias
+                }]
+            }
         })
     }
 
