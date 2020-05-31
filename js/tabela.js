@@ -204,11 +204,11 @@ function geraTabela() {
     let qtd = [];
     
     for(let elemento in elExclusivos){
-        qtd.push(ocorrencias[elemento]);
+        qtd.push(ocorrencias[elExclsivos[elemento]]);
     }
 
     console.log(qtd);
-    
+
     let chartGraph = new Chart(ctx, {
         type: 'doughnut',
         data: {
