@@ -247,9 +247,9 @@ function geraTabela() {
             },
             options: {
                 scales: {
-                    xAxes: [{
+                    yAxes: [{
                         ticks:{
-                        beginAtZero:true
+                            beginAtZero:true
                         }
                     }]
                 }
