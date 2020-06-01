@@ -170,8 +170,6 @@ function geraTabela() {
         elContinua.push(elFinal);
     }
 
-    console.log(elContinua);
-
     cabecalho.appendChild(document.createTextNode("Tabela de " + variavel));
     cabecalho.setAttribute("align", "center");
     tabela.appendChild(cabecalho);
@@ -267,6 +265,7 @@ function geraTabela() {
             cor.push(corAleatoria());
         }
 
+        let desvio = (190 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -285,13 +284,7 @@ function geraTabela() {
                         display: false,
                         barPercentage: 1.3,
                         ticks: {
-                            max: 3,
-                        }
-                    }, {
-                        display: true,
-                        ticks: {
-                            autoSkip: false,
-                            max: 4,
+                            labelOffset: desvio
                         }
                     }],
                     yAxes: [{
