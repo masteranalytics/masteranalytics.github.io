@@ -265,7 +265,7 @@ function geraTabela() {
             cor.push(corAleatoria());
         }
 
-        let desvio = (250 / elContinua.length) * (-1);
+        let desvio = (300 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
