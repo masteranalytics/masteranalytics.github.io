@@ -279,13 +279,12 @@ function geraTabela() {
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["a", "b"],
+                labels: elContinua,
                 datasets: [{
                     data: qtdContinua,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                    maxBarThickness: 100,
                 }]
             },
             options: {
