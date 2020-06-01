@@ -271,16 +271,18 @@ function geraTabela() {
             }
         });
     } else {
+        let label = []
         for (let i = 0; i < elContinua.length - 1; i++) {
             cor.push(corAleatoria());
+            label[i] = elContinua[i] + " |--- " + Number(elContinua[i] + intervalo)
         }
-
         let desvio = (320 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: elContinua,
                 datasets: [{
+                    label: label,
                     data: qtdContinua,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
