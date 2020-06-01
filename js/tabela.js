@@ -231,6 +231,9 @@ function geraTabela() {
                 }]
             },
             options: {
+                legend: {
+                    display: false
+                },
                 responsive: true,
                 title: {
                     display: true,
@@ -256,6 +259,9 @@ function geraTabela() {
                 }]
             },
             options: {
+                legend: {
+                    display: false
+                },
                 responsive: true,
                 title: {
                     display: true,
@@ -287,6 +293,9 @@ function geraTabela() {
                 }]
             },
             options: {
+                legend: {
+                    display: false
+                },
                 responsive: true,
                 title: {
                     display: true,
