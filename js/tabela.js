@@ -7,6 +7,7 @@ function geraTabela() {
     let qtd = [];
     let cor = [];
     let ocorrencias = {};
+    let intervalo = 0;
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
     let cabecalho = document.createElement("thead");
@@ -110,7 +111,6 @@ function geraTabela() {
         let k = Math.sqrt(elementos.length).toFixed(0);
         let divisivel = false;
         let classes = 0;
-        let intervalo = 0;
         let elInicial = 0;
         let elFinal = 0;
 
