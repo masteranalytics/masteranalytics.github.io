@@ -261,11 +261,11 @@ function geraTabela() {
             }
         });
     } else {
-        for (i = 0; i > elContinua.length - 1; i++) {
+        for (let i = 0; i < elContinua.length - 1; i++) {
             cor.push(corAleatoria());
         }
 
-        let desvio = (190 / elContinua.length) * (-1);
+        let desvio = (200 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
