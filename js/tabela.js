@@ -285,7 +285,7 @@ function geraTabela() {
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
-                    maxBarThickness: 10,
+                    maxBarThickness: 100,
                 }]
             },
             options: {
