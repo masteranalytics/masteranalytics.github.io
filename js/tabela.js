@@ -224,12 +224,18 @@ function geraTabela() {
             data: {
                 labels: elExclusivos,
                 datasets: [{
-                    label: variavel,
                     data: qtd,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
                 }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: variavel
+                }
             }
         });
     } else if (tipovariavel == "Quantitativa Discreta") {
@@ -243,7 +249,6 @@ function geraTabela() {
             data: {
                 labels: elExclusivos,
                 datasets: [{
-                    label: variavel,
                     data: qtd,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
@@ -251,6 +256,11 @@ function geraTabela() {
                 }]
             },
             options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: variavel
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -269,17 +279,17 @@ function geraTabela() {
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["a","b"],
+                labels: ["a", "b"],
                 datasets: [{
-                    label: variavel,
                     data: qtdContinua,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
                     hoverBorderColor: 'rgba(200, 200, 200, 1)',
+                    maxBarThickness: 10,
                 }]
             },
             options: {
-                responsive: false,
+                responsive: true,
                 title: {
                     display: true,
                     text: variavel
