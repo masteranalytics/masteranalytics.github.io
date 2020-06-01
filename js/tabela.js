@@ -279,9 +279,12 @@ function geraTabela() {
                 }]
             },
             options: {
+                title: {
+                    display: true,
+                    text: variavel
+                },
                 scales: {
                     xAxes: [{
-                        display: false,
                         barPercentage: 1.3,
                         ticks: {
                             labelOffset: desvio
