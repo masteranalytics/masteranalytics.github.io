@@ -265,11 +265,11 @@ function geraTabela() {
             cor.push(corAleatoria());
         }
 
-        let desvio = (300 / elContinua.length) * (-1);
+        let desvio = (320 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: elContinua,
+                labels: ["a","b"],
                 datasets: [{
                     label: variavel,
                     data: qtdContinua,
