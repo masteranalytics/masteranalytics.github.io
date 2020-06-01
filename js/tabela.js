@@ -279,7 +279,7 @@ function geraTabela() {
                 }]
             },
             options: {
-                resposive: false,
+                responsive: false,
                 title: {
                     display: true,
                     text: variavel
