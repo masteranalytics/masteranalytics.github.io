@@ -7,7 +7,6 @@ function geraTabela() {
     let qtd = [];
     let cor = [];
     let ocorrencias = {};
-    let intervalo = 0;
     let div = document.getElementById("divtabela");
     let tabela = document.createElement("table");
     let cabecalho = document.createElement("thead");
@@ -111,6 +110,7 @@ function geraTabela() {
         let k = Math.sqrt(elementos.length).toFixed(0);
         let divisivel = false;
         let classes = 0;
+        let intervalo = 0;
         let elInicial = 0;
         let elFinal = 0;
 
@@ -271,10 +271,8 @@ function geraTabela() {
             }
         });
     } else {
-        let label = []
         for (let i = 0; i < elContinua.length - 1; i++) {
             cor.push(corAleatoria());
-            label[i] = elContinua[i] + " |--- " + Number(elContinua[i] + intervalo)
         }
         let desvio = (320 / elContinua.length) * (-1);
         let chartGraph = new Chart(ctx, {
@@ -282,7 +280,6 @@ function geraTabela() {
             data: {
                 labels: elContinua,
                 datasets: [{
-                    label: label,
                     data: qtdContinua,
                     backgroundColor: cor,
                     borderColor: 'rgba(200, 200, 200, 0.75)',
