@@ -342,6 +342,4 @@ function geraTabela() {
                 separatriz.focus();
         }
     }
-    separatriz.addEventListener("change", alteraValorSeparatriz);
-
 }
