@@ -133,6 +133,8 @@ function geraTabela() {
         intervalo = at / classes;
         elInicial = Number(elementos[0]);
 
+        qtdContinua.push(0)
+
         for (let i = 1; i <= classes; i++) {
             elFinal = Number(elInicial) + Number(intervalo);
             let qtdElementos = 0;
