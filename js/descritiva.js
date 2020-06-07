@@ -289,7 +289,7 @@ function geraTabela() {
         for (let i = 0; i < elContinua.length - 1; i++) {
             cor.push(corAleatoria());
         }
-        let desvio = (320 / elContinua.length) * (-1);
+        let desvio = (320 / elContinua.length);
         let chartGraph = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -313,9 +313,9 @@ function geraTabela() {
                 scales: {
                     xAxes: [{
                         barPercentage: 1.3,
-                        // ticks: {
-                        //     labelOffset: desvio
-                        // }
+                        ticks: {
+                            labelOffset: desvio
+                        }
                     }],
                     yAxes: [{
                         ticks: {
