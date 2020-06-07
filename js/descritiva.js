@@ -313,9 +313,9 @@ function geraTabela() {
                 scales: {
                     xAxes: [{
                         barPercentage: 1.3,
-                        ticks: {
-                            labelOffset: desvio
-                        }
+                        // ticks: {
+                        //     labelOffset: desvio
+                        // }
                     }],
                     yAxes: [{
                         ticks: {
