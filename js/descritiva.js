@@ -24,6 +24,7 @@ function geraTabela() {
     let qtdmoda = 0;
     let moda = "";
     let indexmediana = 0;
+    let indexseparatriz = 0;
     let mediana = "";
     let tipovariavel = "";
     let ctx = document.getElementsByClassName("grafico");
@@ -178,8 +179,13 @@ function geraTabela() {
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
-    mediana = elementos[indexmediana - 1]
-
+    
+    if(elementos.length % 2 == 0){
+        mediana = (elementos[indexmediana - 1] + elementos[indexmediana]) / 2
+    }else{
+        mediana = elementos[indexmediana - 1]
+    }
+    
     div = document.getElementById("divmtc");
     tabela = document.createElement("table");
     corpo = document.createElement("tbody");
@@ -323,25 +329,39 @@ function geraTabela() {
 }
 
 function alteraValorSeparatriz() {
-    alert('Entrou')
-    const valseparatriz = document.getElementById("valseparatriz")
+    const valseparatriz = document.getElementById("valseparatriz");
     let selecionado = separatriz.selectedIndex;
-
+    
     switch (selecionado) {
+        case 0:
+            break;
         case 1:
             valseparatriz.setAttribute("step", "25");
+            indexseparatriz = elementos.length / 4
             break;
         case 2:
             valseparatriz.setAttribute("step", "20");
+            indexseparatriz = elementos.length / 5
             break;
         case 3:
             valseparatriz.setAttribute("step", "10");
+            indexseparatriz = elementos.length / 10
             break;
         case 4:
             valseparatriz.setAttribute("step", "1");
+            indexseparatriz = elementos.length / 100
             break;
         default:
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
+}
+
+function alteraIndexSeparatriz() {
+    const range = document.getElementById("range");
+    const valrange = document.getElementById("valrange");
+
+    indexseparatriz = indexseparatriz * va
+
+    valrange.innerHTML = range.value;
 }
