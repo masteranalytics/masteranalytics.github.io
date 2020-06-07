@@ -63,14 +63,14 @@
             </div>
             <button class="btn btn-primary active" data-toggle="button" id="botao" type="button"
                 onclick="geraTabela()">Calcular</button>
-            <select id="separatriz" onchange="alteraValorSeparatriz()">
+            <select id="separatriz" onchange="alteraValorSeparatriz()" disabled>
                 <option>Selecione</option>
                 <option>Quartil</option>
                 <option>Quintil</option>
                 <option>Decil</option>
                 <option>Porcentil</option>
             </select>
-            <label id="valrange" for="range">0</label>
+            <label id="valrange" for="range"></label>
             <input type="range" id="valseparatriz" min="0" max="100" value="0">
         </form>
     </div>
