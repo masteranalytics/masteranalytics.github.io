@@ -181,11 +181,11 @@ function geraTabela() {
     tabela.setAttribute("align", "center");
     
     if(elementos.length % 2 == 0){
-        mediana = (elementos[indexmediana - 1] + elementos[indexmediana]) / 2
+        mediana = (Number(elementos[indexmediana - 1]) + Number(elementos[indexmediana])) / 2
     }else{
         mediana = elementos[indexmediana - 1]
     }
-    
+
     div = document.getElementById("divmtc");
     tabela = document.createElement("table");
     corpo = document.createElement("tbody");
