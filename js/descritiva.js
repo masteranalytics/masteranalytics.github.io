@@ -1,4 +1,5 @@
 function geraTabela() {
+    const separatriz = document.getElementById("separatriz");
     let variavel = document.getElementById("variavel").value;
     let elementos = [];
     let elExclusivos = [];
@@ -317,4 +318,29 @@ function geraTabela() {
             }
         });
     }
+
+    function alteraValorSeparatriz() {
+        const valseparatriz = document.getElementById("valseparatriz")
+        let selecionado = separatriz.selectedIndex;
+
+        switch (selecionado) {
+            case 1:
+                valseparatriz.setAttribute("step", "25");
+                break;
+            case 2:
+                valseparatriz.setAttribute("step", "20");
+                break;
+            case 3:
+                valseparatriz.setAttribute("step", "10");
+                break;
+            case 4:
+                valseparatriz.setAttribute("step", "1");
+                break;
+            default:
+                alert('Selecione uma operação válida!');
+                separatriz.focus();
+        }
+    }
+    separatriz.addEventListener("input", alteraValorSeparatriz);
+
 }

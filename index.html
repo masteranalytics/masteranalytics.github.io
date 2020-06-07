@@ -63,6 +63,14 @@
             </div>
             <button class="btn btn-primary active" data-toggle="button" id="botao" type="button"
                 onclick="geraTabela()">Calcular</button>
+            <select id="searatriz">
+                <option>Selecione</option>
+                <option>Quartil</option>
+                <option>Quintil</option>
+                <option>Decil</option>
+                <option>Porcentil</option>
+            </select>
+            <input type="range" id="valseparatriz" min="0" max="100">
         </form>
     </div>
     <br><br>
@@ -83,7 +91,7 @@
     <script src="/Bootstrap/js/popper.min.js"></script>
     <script src="/Bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="/js/tabela.js"></script>
+    <script src="/js/descritiva.js"></script>
 </body>
 
 </html>
