@@ -320,6 +320,7 @@ function geraTabela() {
     }
 
     function alteraValorSeparatriz() {
+        alert('Entrou')
         const valseparatriz = document.getElementById("valseparatriz")
         let selecionado = separatriz.selectedIndex;
 
