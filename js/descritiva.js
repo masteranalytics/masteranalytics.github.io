@@ -319,27 +319,29 @@ function geraTabela() {
         });
     }
 
-    function alteraValorSeparatriz() {
-        alert('Entrou')
-        const valseparatriz = document.getElementById("valseparatriz")
-        let selecionado = separatriz.selectedIndex;
 
-        switch (selecionado) {
-            case 1:
-                valseparatriz.setAttribute("step", "25");
-                break;
-            case 2:
-                valseparatriz.setAttribute("step", "20");
-                break;
-            case 3:
-                valseparatriz.setAttribute("step", "10");
-                break;
-            case 4:
-                valseparatriz.setAttribute("step", "1");
-                break;
-            default:
-                alert('Selecione uma operação válida!');
-                separatriz.focus();
-        }
+}
+
+function alteraValorSeparatriz() {
+    alert('Entrou')
+    const valseparatriz = document.getElementById("valseparatriz")
+    let selecionado = separatriz.selectedIndex;
+
+    switch (selecionado) {
+        case 1:
+            valseparatriz.setAttribute("step", "25");
+            break;
+        case 2:
+            valseparatriz.setAttribute("step", "20");
+            break;
+        case 3:
+            valseparatriz.setAttribute("step", "10");
+            break;
+        case 4:
+            valseparatriz.setAttribute("step", "1");
+            break;
+        default:
+            alert('Selecione uma operação válida!');
+            separatriz.focus();
     }
 }
