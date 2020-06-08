@@ -2,48 +2,59 @@ const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
 const resSeparatriz = document.getElementById("resSeparatriz")
 let indexseparatriz = 0;
+let variavel = document.getElementById("variavel").value;
+let elementos = [];
+let elExclusivos = [];
+let elContinua = [];
+let qtdContinua = [];
+let qtd = [];
+let cor = [];
+let ocorrencias = {};
+let div = document.getElementById("divtabela");
+let tabela = document.createElement("table");
+let cabecalho = document.createElement("thead");
+let corpo = document.createElement("tbody");
+
+let fac = 0;
+let facp = 0;
+let soma = 0;
+let qtdmoda = 0;
+let moda = "";
+let indexmediana = 0;
+let mediana = "";
+let tipovariavel = "";
+let ctx = document.getElementsByClassName("grafico");
 
 separatriz.disabled = true;
 valseparatriz.disabled = true
 
-function geraTabela() {
-    let variavel = document.getElementById("variavel").value;
-    let elementos = [];
-    let elExclusivos = [];
-    let elContinua = [];
-    let qtdContinua = [];
-    let qtd = [];
-    let cor = [];
-    let ocorrencias = {};
-    let div = document.getElementById("divtabela");
-    let tabela = document.createElement("table");
-    let cabecalho = document.createElement("thead");
-    let corpo = document.createElement("tbody");
-    let linha = document.createElement("tr")
-    let celula1 = document.createElement("td");
-    let celula2 = document.createElement("td");
-    let celula3 = document.createElement("td");
-    let celula4 = document.createElement("td");
-    let celula5 = document.createElement("td");
-    let fac = 0;
-    let facp = 0;
-    let soma = 0;
-    let qtdmoda = 0;
-    let moda = "";
-    let indexmediana = 0;
-    let mediana = "";
-    let tipovariavel = "";
-    let ctx = document.getElementsByClassName("grafico");
 
+//Função para organizar os vetores
+function sortFunction(a, b) {
+    return (a - b);
+}
+
+//Função para criar os elementos da tabela
+function constroiTabela(...params) {
+    let linha = document.createElement("tr")
+    for (let valor in params) {
+        let celula = document.createElement("td");
+        celula.appendChild(document.createTextNode(valor));
+        linha.appendChild(celula);
+    }
+    linha.setAttribute("align", "center");
+    corpo.appendChild(linha);
+}
+//Função para gerar a tabela
+function geraTabela() {
+    //Limpa os conteúdos das divs
     div.innerHTML = "";
     ctx.innerHTML = "";
 
+    //Libera o uso das medidas separatrizes
     separatriz.disabled = false;
 
-    function sortFunction(a, b) {
-        return (a - b);
-    }
-
+    // Adiciona os elementos ao vetor
     for (let elemento of document.getElementById("elementos").value.split(";")) {
         elementos.push(elemento.trim());
         if (!isNaN(elemento)) {
@@ -53,8 +64,10 @@ function geraTabela() {
 
     indexmediana = elementos.length / 2;
 
+    //Adiciona a um novo vetor somente os valores exclusivos
     elExclusivos = [...new Set(elementos)];
 
+    //Faz a contagem das ocorrências de cada elemento
     ocorrencias = elementos.reduce(function (obj, item) {
         obj[item] = (obj[item] || 0) + 1;
         if (obj[item] > qtdmoda) {
@@ -64,6 +77,7 @@ function geraTabela() {
         return obj;
     }, {});
 
+    //Verifica qual o tipo da variável que está sendo analisada
     if (isNaN(elementos[1])) {
         tipovariavel = "Qualitativa"
     } else {
@@ -74,19 +88,8 @@ function geraTabela() {
         }
     }
 
-    celula1.appendChild(document.createTextNode(variavel));
-    linha.appendChild(celula1);
-    celula2.appendChild(document.createTextNode("Frequência simples"));
-    linha.appendChild(celula2);
-    celula3.appendChild(document.createTextNode("Frequência simples percentual"));
-    linha.appendChild(celula3);
-    celula4.appendChild(document.createTextNode("Frequência acumulada"));
-    linha.appendChild(celula4);
-    celula5.appendChild(document.createTextNode("Frequência acumulada percentual"));
-    linha.appendChild(celula5);
-    linha.setAttribute("align", "center");
-    corpo.appendChild(linha);
-
+    constroiTabela(variavel,"Frequência simples","Frequência simples percentual","Frequência acumulada","Frequência acumulada percentual")
+    
     elExclusivos.sort(sortFunction);
 
     if (tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa") {
@@ -189,10 +192,10 @@ function geraTabela() {
     div.appendChild(tabela);
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
-    
-    if(elementos.length % 2 == 0){
+
+    if (elementos.length % 2 == 0) {
         mediana = (Number(elementos[indexmediana - 1]) + Number(elementos[indexmediana])) / 2
-    }else{
+    } else {
         mediana = elementos[indexmediana - 1]
     }
 
@@ -340,7 +343,7 @@ function geraTabela() {
 
 function alteraValorSeparatriz() {
     let selecionado = separatriz.selectedIndex;
-    
+
     switch (selecionado) {
         case 0:
             valseparatriz.disabled = true
