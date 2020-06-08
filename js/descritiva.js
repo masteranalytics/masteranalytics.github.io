@@ -1,6 +1,8 @@
 const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
 const resSeparatriz = document.getElementById("resSeparatriz");
+const range = document.getElementById("range");
+const valrange = document.getElementById("valrange");
 let indexseparatriz = 0;
 let variavel;
 let elementos = [];
@@ -323,21 +325,25 @@ function alteraValorSeparatriz() {
             break;
         case 1:
             valseparatriz.disabled = false
+            valseparatriz.setAttribute("max","4")
             valseparatriz.setAttribute("step", "25");
             indexseparatriz = elementos.length / 4
             break;
         case 2:
             valseparatriz.disabled = false
+            valseparatriz.setAttribute("max","5")
             valseparatriz.setAttribute("step", "20");
             indexseparatriz = elementos.length / 5
             break;
         case 3:
             valseparatriz.disabled = false
+            valseparatriz.setAttribute("max","10")
             valseparatriz.setAttribute("step", "10");
             indexseparatriz = elements.length / 10
             break;
         case 4:
             valseparatriz.disabled = false
+            valseparatriz.setAttribute("max","100")
             valseparatriz.setAttribute("step", "1");
             indexseparatriz = elementos.length / 100
             break;
@@ -346,17 +352,10 @@ function alteraValorSeparatriz() {
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
-    resSeparatriz.innerHTML = elementos[parseInt(indexseparatriz) * elementos.length];
-    console.log(parseInt(indexseparatriz))
-    console.log(elementos.length)
-    console.log(parseInt(indexseparatriz) * elementos.length)
+    resSeparatriz.innerHTML = elementos[indexseparatriz * valrange];
 }
 
 function alteraIndexSeparatriz() {
-    const range = document.getElementById("range");
-    const valrange = document.getElementById("valrange");
-
-    indexseparatriz = indexseparatriz * va
-
     valrange.innerHTML = range.value;
+    indexseparatriz = indexseparatriz * valrange;
 }
