@@ -2,7 +2,7 @@ const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
 let indexseparatriz = 0;
 
-// valseparatriz.disabled = "true"
+valseparatriz.disabled = true
 
 function geraTabela() {
     let variavel = document.getElementById("variavel").value;
@@ -339,30 +339,30 @@ function alteraValorSeparatriz() {
     
     switch (selecionado) {
         case 0:
-            valseparatriz.disabled = "true"
+            valseparatriz.disabled = true
             break;
         case 1:
-            valseparatriz.disabled = "false"
+            valseparatriz.disabled = false
             valseparatriz.setAttribute("step", "25");
             indexseparatriz = elementos.length / 4
             break;
         case 2:
-            valseparatriz.disabled = "false"
+            valseparatriz.disabled = false
             valseparatriz.setAttribute("step", "20");
             indexseparatriz = elementos.length / 5
             break;
         case 3:
-            valseparatriz.disabled = "false"
+            valseparatriz.disabled = false
             valseparatriz.setAttribute("step", "10");
             indexseparatriz = elementos.length / 10
             break;
         case 4:
-            valseparatriz.disabled = "false"
+            valseparatriz.disabled = false
             valseparatriz.setAttribute("step", "1");
             indexseparatriz = elementos.length / 100
             break;
         default:
-            valseparatriz.disabled = "true"
+            valseparatriz.disabled = true
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
