@@ -1,6 +1,6 @@
 const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
-const resSeparatriz = document.getElementById("resSeparatriz")
+const resSeparatriz = document.getElementById("resSeparatriz");
 let indexseparatriz = 0;
 let variavel;
 let elementos = [];
@@ -346,7 +346,7 @@ function alteraValorSeparatriz() {
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
-    resSeparatriz.innerHTML(elementos[indexseparatriz * elementos.length]);
+    resSeparatriz.innerHTML = elementos[indexseparatriz * elementos.length];
 }
 
 function alteraIndexSeparatriz() {
