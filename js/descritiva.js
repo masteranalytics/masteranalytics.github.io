@@ -33,8 +33,8 @@ function sortFunction(a, b) {
     return (a - b);
 }
 
-//Função para criar os elementos da tabela
-function constroiTabela(...params) {
+//Função para criar as linhas da tabela
+function constroiLinhaTabela(...params) {
     let linha = document.createElement("tr")
     for (let valor in params) {
         let celula = document.createElement("td");
@@ -44,6 +44,7 @@ function constroiTabela(...params) {
     linha.setAttribute("align", "center");
     corpo.appendChild(linha);
 }
+
 //Função para gerar a tabela
 function geraTabela() {
     //Limpa os conteúdos das divs
@@ -54,7 +55,7 @@ function geraTabela() {
     separatriz.disabled = false;
 
     //Pega o nome da variável
-    variavel = document.getElementById("variavel");
+    variavel = document.getElementById("variavel").value;
 
     // Adiciona os elementos ao vetor
     for (let elemento of document.getElementById("elementos").value.split(";")) {
@@ -90,8 +91,9 @@ function geraTabela() {
         }
     }
 
-    constroiTabela(variavel,"Frequência simples","Frequência simples percentual","Frequência acumulada","Frequência acumulada percentual")
+    constroiLinhaTabela(variavel,"Frequência simples","Frequência simples percentual","Frequência acumulada","Frequência acumulada percentual")
     
+    //Organiza o vertor em orderm crescrente/alfabética
     elExclusivos.sort(sortFunction);
 
     if (tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa") {
@@ -101,7 +103,7 @@ function geraTabela() {
             fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
             facp = ((fac / elementos.length) * 100).toFixed(1);
 
-            constroiTabela(elExclusivos[elemento],ocorrencias[elExclusivos[elemento]],fsp + "%",fac,facp + "%")
+            constroiLinhaTabela(elExclusivos[elemento],ocorrencias[elExclusivos[elemento]],fsp + "%",fac,facp + "%")
         }
     } else {
         elementos.sort(sortFunction);
@@ -147,7 +149,7 @@ function geraTabela() {
             fac = parseInt(fac) + parseInt(qtdElementos);
             facp = ((fac / elementos.length) * 100).toFixed(1);
 
-            constroiTabela(elInicial + " |---- " + elFinal,qtdElementos,fsp + "%",fac,facp + "%")
+            constroiLinhaTabela(elInicial + " |---- " + elFinal,qtdElementos,fsp + "%",fac,facp + "%")
 
             elContinua.push(elInicial);
             qtdContinua.push(qtdElementos);
