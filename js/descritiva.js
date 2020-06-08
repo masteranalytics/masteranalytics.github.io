@@ -346,7 +346,7 @@ function alteraValorSeparatriz() {
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
-    resSeparatriz.innerHTML = elementos[indexseparatriz * elementos.length];
+    resSeparatriz.innerHTML = elementos[paseInt(indexseparatriz) * elementos.length];
 }
 
 function alteraIndexSeparatriz() {
