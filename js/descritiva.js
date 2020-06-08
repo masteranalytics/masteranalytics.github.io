@@ -347,6 +347,9 @@ function alteraValorSeparatriz() {
             separatriz.focus();
     }
     resSeparatriz.innerHTML = elementos[parseInt(indexseparatriz) * elementos.length];
+    console.log(parseInt(indexseparatriz))
+    console.log(elementos.length)
+    console.log(parseInt(indexseparatriz) * elementos.length)
 }
 
 function alteraIndexSeparatriz() {
