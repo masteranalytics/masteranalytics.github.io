@@ -334,7 +334,7 @@ function alteraValorSeparatriz() {
         case 3:
             valseparatriz.disabled = false
             valseparatriz.setAttribute("step", "10");
-            indexseparatriz = elementos.length / 10
+            indexseparatriz = elements.length / 10
             break;
         case 4:
             valseparatriz.disabled = false
@@ -346,7 +346,7 @@ function alteraValorSeparatriz() {
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
-    resSeparatriz.innerHTML = elementos[paseInt(indexseparatriz) * elementos.length];
+    resSeparatriz.innerHTML = elementos[parseInt(indexseparatriz) * elementos.length];
 }
 
 function alteraIndexSeparatriz() {
