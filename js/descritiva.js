@@ -1,5 +1,10 @@
+const separatriz = document.getElementById("separatriz");
+const valseparatriz = document.getElementById("valseparatriz");
+let indexseparatriz = 0;
+
+valseparatriz.disabled = "true"
+
 function geraTabela() {
-    const separatriz = document.getElementById("separatriz");
     let variavel = document.getElementById("variavel").value;
     let elementos = [];
     let elExclusivos = [];
@@ -24,7 +29,6 @@ function geraTabela() {
     let qtdmoda = 0;
     let moda = "";
     let indexmediana = 0;
-    let indexseparatriz = 0;
     let mediana = "";
     let tipovariavel = "";
     let ctx = document.getElementsByClassName("grafico");
@@ -331,7 +335,6 @@ function geraTabela() {
 }
 
 function alteraValorSeparatriz() {
-    const valseparatriz = document.getElementById("valseparatriz");
     let selecionado = separatriz.selectedIndex;
     
     switch (selecionado) {
