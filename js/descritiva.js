@@ -2,7 +2,7 @@ const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
 const resSeparatriz = document.getElementById("resSeparatriz")
 let indexseparatriz = 0;
-let variavel = document.getElementById("variavel").value;
+let variavel;
 let elementos = [];
 let elExclusivos = [];
 let elContinua = [];
@@ -14,7 +14,6 @@ let div = document.getElementById("divtabela");
 let tabela = document.createElement("table");
 let cabecalho = document.createElement("thead");
 let corpo = document.createElement("tbody");
-
 let fac = 0;
 let facp = 0;
 let soma = 0;
@@ -53,6 +52,9 @@ function geraTabela() {
 
     //Libera o uso das medidas separatrizes
     separatriz.disabled = false;
+
+    //Pega o nome da variável
+    variavel = document.getElementById("variavel");
 
     // Adiciona os elementos ao vetor
     for (let elemento of document.getElementById("elementos").value.split(";")) {
@@ -94,28 +96,12 @@ function geraTabela() {
 
     if (tipovariavel == "Quantitativa Discreta" || tipovariavel == "Qualitativa") {
         for (let elemento in elExclusivos) {
-            let linha = document.createElement("tr")
-            let celula1 = document.createElement("td");
-            let celula2 = document.createElement("td");
-            let celula3 = document.createElement("td");
-            let celula4 = document.createElement("td");
-            let celula5 = document.createElement("td");
             let fsp = parseFloat((ocorrencias[elExclusivos[elemento]] / elementos.length) * 100).toFixed(0);
 
             fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
             facp = ((fac / elementos.length) * 100).toFixed(1);
-            celula1.appendChild(document.createTextNode(elExclusivos[elemento]));
-            linha.appendChild(celula1);
-            celula2.appendChild(document.createTextNode(ocorrencias[elExclusivos[elemento]]));
-            linha.appendChild(celula2);
-            celula3.appendChild(document.createTextNode(fsp + "%"));
-            linha.appendChild(celula3);
-            celula4.appendChild(document.createTextNode(fac));
-            linha.appendChild(celula4);
-            celula5.appendChild(document.createTextNode(facp + "%"));
-            linha.appendChild(celula5);
-            linha.setAttribute("align", "center");
-            corpo.appendChild(linha);
+
+            constroiTabela(elExclusivos[elemento],ocorrencias[elExclusivos[elemento]],fsp + "%",fac,facp + "%")
         }
     } else {
         elementos.sort(sortFunction);
@@ -149,12 +135,6 @@ function geraTabela() {
         for (let i = 1; i <= classes; i++) {
             elFinal = Number(elInicial) + Number(intervalo);
             let qtdElementos = 0;
-            let linha = document.createElement("tr")
-            let celula1 = document.createElement("td");
-            let celula2 = document.createElement("td");
-            let celula3 = document.createElement("td");
-            let celula4 = document.createElement("td");
-            let celula5 = document.createElement("td");;
 
             for (let elemento in elementos) {
                 if (elementos[elemento] >= elInicial && elementos[elemento] < elFinal) {
@@ -166,18 +146,9 @@ function geraTabela() {
 
             fac = parseInt(fac) + parseInt(qtdElementos);
             facp = ((fac / elementos.length) * 100).toFixed(1);
-            celula1.appendChild(document.createTextNode(elInicial + " |---- " + elFinal));
-            linha.appendChild(celula1);
-            celula2.appendChild(document.createTextNode(qtdElementos));
-            linha.appendChild(celula2);
-            celula3.appendChild(document.createTextNode(fsp + "%"));
-            linha.appendChild(celula3);
-            celula4.appendChild(document.createTextNode(fac));
-            linha.appendChild(celula4);
-            celula5.appendChild(document.createTextNode(facp + "%"));
-            linha.appendChild(celula5);
-            linha.setAttribute("align", "center");
-            corpo.appendChild(linha);
+
+            constroiTabela(elInicial + " |---- " + elFinal,qtdElementos,fsp + "%",fac,facp + "%")
+
             elContinua.push(elInicial);
             qtdContinua.push(qtdElementos);
             elInicial = elFinal;
