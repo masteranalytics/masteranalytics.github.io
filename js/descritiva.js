@@ -39,7 +39,7 @@ function constroiTabela(...params) {
     let linha = document.createElement("tr")
     for (let valor in params) {
         let celula = document.createElement("td");
-        celula.appendChild(document.createTextNode(valor));
+        celula.appendChild(document.createTextNode(params[valor]));
         linha.appendChild(celula);
     }
     linha.setAttribute("align", "center");
