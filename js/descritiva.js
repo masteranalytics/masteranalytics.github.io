@@ -332,35 +332,34 @@ function geraTabela() {
 
 function alteraValorSeparatriz() {
     const valseparatriz = document.getElementById("valseparatriz");
-    const range = document.getElementById("range");
     let selecionado = separatriz.selectedIndex;
     
     switch (selecionado) {
         case 0:
-            range.disabled = "true"
+            valseparatriz.disabled = "true"
             break;
         case 1:
-            range.disabled = "false"
+            valseparatriz.disabled = "false"
             valseparatriz.setAttribute("step", "25");
             indexseparatriz = elementos.length / 4
             break;
         case 2:
-            range.disabled = "false"
+            valseparatriz.disabled = "false"
             valseparatriz.setAttribute("step", "20");
             indexseparatriz = elementos.length / 5
             break;
         case 3:
-            range.disabled = "false"
+            valseparatriz.disabled = "false"
             valseparatriz.setAttribute("step", "10");
             indexseparatriz = elementos.length / 10
             break;
         case 4:
-            range.disabled = "false"
+            valseparatriz.disabled = "false"
             valseparatriz.setAttribute("step", "1");
             indexseparatriz = elementos.length / 100
             break;
         default:
-            range.disabled = "true"
+            valseparatriz.disabled = "true"
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
