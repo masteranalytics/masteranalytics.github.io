@@ -2,7 +2,7 @@ const separatriz = document.getElementById("separatriz");
 const valseparatriz = document.getElementById("valseparatriz");
 let indexseparatriz = 0;
 
-valseparatriz.disabled = "true"
+// valseparatriz.disabled = "true"
 
 function geraTabela() {
     let variavel = document.getElementById("variavel").value;
