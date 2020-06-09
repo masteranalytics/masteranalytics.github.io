@@ -26,7 +26,8 @@ let tipovariavel = "";
 let ctx = document.getElementsByClassName("grafico");
 
 separatriz.disabled = true;
-valseparatriz.disabled = true
+valseparatriz.disabled = true;
+resSeparatriz.innerHTML = "";
 
 
 //Função para organizar os vetores
@@ -351,5 +352,5 @@ function alteraValorSeparatriz() {
 function alteraIndexSeparatriz() {
     indexseparatriz = indexseparatriz * valseparatriz.value;
     valrange.innerHTML = separatriz.selectedIndex + ": " + valseparatriz.value;
-    resSeparatriz.innerHTML = elementos[indexseparatriz * valseparatriz.value];
+    resSeparatriz.innerHTML = elementos[parseInt(indexseparatriz * valseparatriz.value)];
 }
