@@ -350,7 +350,7 @@ function alteraValorSeparatriz() {
 }
 
 function alteraIndexSeparatriz() {
-    indexseparatriz = indexseparatriz * valseparatriz.value;
+    let indice = parseInt(indexseparatriz * valseparatriz.value);
     valrange.innerHTML = separatriz.options.item(separatriz.selectedIndex).text + ": " + valseparatriz.value;
-    resSeparatriz.innerHTML = elementos[parseInt(indexseparatriz * valseparatriz.value)];
+    resSeparatriz.innerHTML = elementos[indice];
 }
