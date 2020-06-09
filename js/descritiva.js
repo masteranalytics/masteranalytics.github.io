@@ -337,7 +337,7 @@ function alteraValorSeparatriz() {
         case 3:
             valseparatriz.disabled = false;
             valseparatriz.setAttribute("max", "10");
-            indexseparatriz = elements.length / 10;
+            indexseparatriz = elementos.length / 10;
             break;
         case 4:
             valseparatriz.disabled = false;
