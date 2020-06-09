@@ -324,19 +324,19 @@ function alteraValorSeparatriz() {
             break;
         case 1:
             valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","4")
+            valseparatriz.setAttribute("max","100")
             valseparatriz.setAttribute("step", "25");
             indexseparatriz = elementos.length / 4
             break;
         case 2:
             valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","5")
+            valseparatriz.setAttribute("max","100")
             valseparatriz.setAttribute("step", "20");
             indexseparatriz = elementos.length / 5
             break;
         case 3:
             valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","10")
+            valseparatriz.setAttribute("max","100")
             valseparatriz.setAttribute("step", "10");
             indexseparatriz = elements.length / 10
             break;
