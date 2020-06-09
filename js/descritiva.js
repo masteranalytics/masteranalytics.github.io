@@ -354,6 +354,7 @@ function alteraValorSeparatriz() {
 function alteraIndexSeparatriz() {
     if (valseparatriz.value != 0) {
         let indice = parseInt(indexseparatriz * valseparatriz.value) - 1;
+        console.log(indice);
         valrange.innerHTML = separatriz.options.item(separatriz.selectedIndex).text + " " + valseparatriz.value;
         resSeparatriz.innerHTML = elementos[indice];
     } else {
