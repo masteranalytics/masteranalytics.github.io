@@ -320,37 +320,38 @@ function alteraValorSeparatriz() {
     let selecionado = separatriz.selectedIndex;
     switch (selecionado) {
         case 0:
-            valseparatriz.disabled = true
+            valseparatriz.disabled = true;
+            resSeparatriz.innerHTML = "";
             break;
         case 1:
-            valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","4")
-            indexseparatriz = elementos.length / 4
+            valseparatriz.disabled = false;
+            valseparatriz.setAttribute("max","4");
+            indexseparatriz = elementos.length / 4;
             break;
         case 2:
-            valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","5")
-            indexseparatriz = elementos.length / 5
+            valseparatriz.disabled = false;
+            valseparatriz.setAttribute("max","5");
+            indexseparatriz = elementos.length / 5;
             break;
         case 3:
-            valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","10")
-            indexseparatriz = elements.length / 10
+            valseparatriz.disabled = false;
+            valseparatriz.setAttribute("max","10");
+            indexseparatriz = elements.length / 10;
             break;
         case 4:
-            valseparatriz.disabled = false
-            valseparatriz.setAttribute("max","100")
-            indexseparatriz = elementos.length / 100
+            valseparatriz.disabled = false;
+            valseparatriz.setAttribute("max","100");
+            indexseparatriz = elementos.length / 100;
             break;
         default:
-            valseparatriz.disabled = true
+            valseparatriz.disabled = true;
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
 }
 
 function alteraIndexSeparatriz() {
-    let indice = parseInt(indexseparatriz * valseparatriz.value);
+    let indice = parseInt(indexseparatriz * valseparatriz.value) - 1;
     valrange.innerHTML = separatriz.options.item(separatriz.selectedIndex).text + ": " + valseparatriz.value;
     resSeparatriz.innerHTML = elementos[indice];
 }
