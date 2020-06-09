@@ -168,7 +168,7 @@ function geraTabela() {
     tabela.setAttribute("border", "2");
     tabela.setAttribute("align", "center");
 
-    if (elementos.length % 2 == 0) {
+    if (elementos.length % 2 == 0 && tipovariavel == "Quantitativa Continua") {
         mediana = (Number(elementos[indexmediana - 1]) + Number(elementos[indexmediana])) / 2
     } else {
         mediana = elementos[indexmediana - 1]
