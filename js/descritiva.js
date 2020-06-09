@@ -323,7 +323,6 @@ function alteraValorSeparatriz() {
             valseparatriz.disabled = true
             break;
         case 1:
-            console.log("1")
             valseparatriz.disabled = false
             valseparatriz.setAttribute("max","4")
             valseparatriz.setAttribute("step", "25");
@@ -352,7 +351,7 @@ function alteraValorSeparatriz() {
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
-    resSeparatriz.innerHTML = elementos[indexseparatriz * valrange];
+    // resSeparatriz.innerHTML = elementos[indexseparatriz * valrange];
 }
 
 function alteraIndexSeparatriz() {
