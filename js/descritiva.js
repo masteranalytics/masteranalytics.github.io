@@ -93,8 +93,8 @@ function geraTabela() {
         }
     }
 
-    constroiLinhaTabela(variavel,"Frequência simples","Frequência simples percentual","Frequência acumulada","Frequência acumulada percentual")
-    
+    constroiLinhaTabela(variavel, "Frequência simples", "Frequência simples percentual", "Frequência acumulada", "Frequência acumulada percentual")
+
     //Organiza o vertor em orderm crescrente/alfabética
     elExclusivos.sort(sortFunction);
 
@@ -105,7 +105,7 @@ function geraTabela() {
             fac = parseInt(fac) + parseInt(ocorrencias[elExclusivos[elemento]]);
             facp = ((fac / elementos.length) * 100).toFixed(1);
 
-            constroiLinhaTabela(elExclusivos[elemento],ocorrencias[elExclusivos[elemento]],fsp + "%",fac,facp + "%")
+            constroiLinhaTabela(elExclusivos[elemento], ocorrencias[elExclusivos[elemento]], fsp + "%", fac, facp + "%")
         }
     } else {
         elementos.sort(sortFunction);
@@ -151,7 +151,7 @@ function geraTabela() {
             fac = parseInt(fac) + parseInt(qtdElementos);
             facp = ((fac / elementos.length) * 100).toFixed(1);
 
-            constroiLinhaTabela(elInicial + " |---- " + elFinal,qtdElementos,fsp + "%",fac,facp + "%")
+            constroiLinhaTabela(elInicial + " |---- " + elFinal, qtdElementos, fsp + "%", fac, facp + "%")
 
             elContinua.push(elInicial);
             qtdContinua.push(qtdElementos);
@@ -318,6 +318,7 @@ function geraTabela() {
 
 function alteraValorSeparatriz() {
     let selecionado = separatriz.selectedIndex;
+    valseparatriz.value = 0;
     switch (selecionado) {
         case 0:
             valseparatriz.disabled = true;
@@ -325,22 +326,22 @@ function alteraValorSeparatriz() {
             break;
         case 1:
             valseparatriz.disabled = false;
-            valseparatriz.setAttribute("max","4");
+            valseparatriz.setAttribute("max", "4");
             indexseparatriz = elementos.length / 4;
             break;
         case 2:
             valseparatriz.disabled = false;
-            valseparatriz.setAttribute("max","5");
+            valseparatriz.setAttribute("max", "5");
             indexseparatriz = elementos.length / 5;
             break;
         case 3:
             valseparatriz.disabled = false;
-            valseparatriz.setAttribute("max","10");
+            valseparatriz.setAttribute("max", "10");
             indexseparatriz = elements.length / 10;
             break;
         case 4:
             valseparatriz.disabled = false;
-            valseparatriz.setAttribute("max","100");
+            valseparatriz.setAttribute("max", "100");
             indexseparatriz = elementos.length / 100;
             break;
         default:
@@ -351,7 +352,11 @@ function alteraValorSeparatriz() {
 }
 
 function alteraIndexSeparatriz() {
-    let indice = parseInt(indexseparatriz * valseparatriz.value) - 1;
-    valrange.innerHTML = separatriz.options.item(separatriz.selectedIndex).text + ": " + valseparatriz.value;
-    resSeparatriz.innerHTML = elementos[indice];
+    if (valseparatriz.value = !0) {
+        let indice = parseInt(indexseparatriz * valseparatriz.value) - 1;
+        valrange.innerHTML = separatriz.options.item(separatriz.selectedIndex).text + ": " + valseparatriz.value;
+        resSeparatriz.innerHTML = elementos[indice];
+    } else {
+        resSeparatriz.innerHTML = "";
+    }
 }
