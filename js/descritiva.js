@@ -318,7 +318,8 @@ function geraTabela() {
 
 function alteraValorSeparatriz() {
     let selecionado = separatriz.selectedIndex;
-    console.log(selecionado)
+    alert("Entrou")
+    alert(selecionado)
     switch (selecionado) {
         case 0:
             valseparatriz.disabled = true
