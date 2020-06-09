@@ -188,7 +188,7 @@ function geraTabela() {
         celula1.appendChild(document.createTextNode("Média: Não existe"));
         linha.appendChild(celula1);
     } else {
-        celula1.appendChild(document.createTextNode("Média: " + (soma / elementos.length).toFixed(1)));
+        celula1.appendChild(document.createTextNode("Média: " + (soma / elementos.length).toFixed(2)));
         linha.appendChild(celula1);
     }
     celula2.appendChild(document.createTextNode("Moda: " + moda));
