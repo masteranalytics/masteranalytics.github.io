@@ -26,8 +26,8 @@ let mediana = "";
 let tipovariavel = "";
 let ctx = document.getElementsByClassName("grafico");
 
-separatriz.disabled = true;
-valseparatriz.disabled = true
+// separatriz.disabled = true;
+// valseparatriz.disabled = true
 
 
 //Função para organizar os vetores
@@ -318,38 +318,36 @@ function geraTabela() {
 
 function alteraValorSeparatriz() {
     let selecionado = separatriz.selectedIndex;
-    alert("Entrou")
-    alert(selecionado)
     switch (selecionado) {
         case 0:
-            valseparatriz.disabled = true
+            //valseparatriz.disabled = true
             break;
         case 1:
-            valseparatriz.disabled = false
+            // valseparatriz.disabled = false
             valseparatriz.setAttribute("max","4")
             valseparatriz.setAttribute("step", "25");
             indexseparatriz = elementos.length / 4
             break;
         case 2:
-            valseparatriz.disabled = false
+            // valseparatriz.disabled = false
             valseparatriz.setAttribute("max","5")
             valseparatriz.setAttribute("step", "20");
             indexseparatriz = elementos.length / 5
             break;
         case 3:
-            valseparatriz.disabled = false
+            // valseparatriz.disabled = false
             valseparatriz.setAttribute("max","10")
             valseparatriz.setAttribute("step", "10");
             indexseparatriz = elements.length / 10
             break;
         case 4:
-            valseparatriz.disabled = false
+            // valseparatriz.disabled = false
             valseparatriz.setAttribute("max","100")
             valseparatriz.setAttribute("step", "1");
             indexseparatriz = elementos.length / 100
             break;
         default:
-            valseparatriz.disabled = true
+            // valseparatriz.disabled = true
             alert('Selecione uma operação válida!');
             separatriz.focus();
     }
